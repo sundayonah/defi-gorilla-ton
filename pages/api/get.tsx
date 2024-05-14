@@ -7,11 +7,7 @@ export default async function get(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const uri = "mongodb+srv://phindCode:phindCode@cluster0.kcfnncd.mongodb.net/defi_gorilla-ton";
-  const client = new MongoClient(uri, { serverSelectionTimeoutMS: 30000 });
-
-//   console.log(userAddress)
-const addr = "0QASAh83BCbEvpZEsKFcw-STLK7Zw2jsO1MiXYaVWyAm8aaQ"
+const client = new MongoClient(process.env.MONGODB_CONNECT || "your_default_connection_string", { serverSelectionTimeoutMS: 30000 });
 
   try {
     // Connect to MongoDB

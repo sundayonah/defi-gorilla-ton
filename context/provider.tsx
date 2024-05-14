@@ -8,7 +8,7 @@ interface TonProps {
 
 export function TonProvider({ children }: TonProps) {
     return (
-        <TonConnectUIProvider manifestUrl="http://localhost:3001/tonconnect-manifest.json">
+        <TonConnectUIProvider manifestUrl="http://localhost:3000/tonconnect-manifest.json">
             {children}
         </TonConnectUIProvider>
     );

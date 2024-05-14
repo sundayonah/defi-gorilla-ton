@@ -75,7 +75,7 @@ const Main: React.FC<AddressProps> = () => {
         }
     
        // Make POST request to API route
-     const response =  await axios.post('http://localhost:3000/api/db', {
+     const response =  await axios.post('/api/db', {
       // Send transaction data to be inserted into MongoDB
       amount: amountInNanotons,
       userAddress: userFriendlyAddress,
@@ -101,7 +101,7 @@ const Main: React.FC<AddressProps> = () => {
     useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/get`);
+        const response = await axios.get(`/api/get`);
         const data = response.data;
         const filteredTransactions = data.filter((transaction: TransactionReward) => transaction.userAddress === userFriendlyAddress);
         setTransactions(filteredTransactions);
